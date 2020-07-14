@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanDoc</title>
+    <style type="text/css">
+      div.form {
+        display: block;
+        text-align: center;
+      }
+      form {
+        display: inline-block;
+        margin: auto;
+        text-align: left;
+      }
+      div.image {
+        display: block;
+        align-content: center;
+      }
+      image {
+        display: inline-block;
+        margin: auto;
+      }
+    </style>
+  </head>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <title>CleanDoc</title>
+  </head>
+  <body style="background-color: oldlace;">
+    <!-- <img src="/media/uploaded.jpg" width="300px" length="300px" /> -->
+    <div class="intro" style="margin: 80px;">
+      <h1 align="center">Welcome to Document Cleaner !</h1>
+      <h4 align="center" style="margin: 50px 0px 0px 0px;">
+        Document images which are the input for key information extraction in
+        multiple
+      </h4>
+      <h4 align="center">
+        business process often fail due to noise in images, which leads to poor
+        OCR results.
+      </h4>
+      <h4 align="center" style="margin: 30px;">
+        Hence a deep learning model is implemented to process the images <br />
+        and help in improving the performance of the whole process.
+      </h4>
+      <h4 align="center" style="margin: 50px;">
+        This can essentially remove water-marks, background noise, underline
+        noise and skewness in the text.
+      </h4>
+      <h4 align="center" style="margin: 50px;">
+        Try it out by choosing a document and clicking the Process button
+      </h4>
+    </div>
+    {% if upload %}
+
+    <div class="image" style="margin: 50px;">
+      <img src="media/uploaded.jpg" width="800px" length="800px" />
+
+      {% endif %} {% if processed %}
+
+      <img src="media/processed.jpg" width="800px" length="800px" />
+    </div>
+
+    {% endif %}
+
+    <div class="form" style="margin: 50px; align-items: center;">
+      <form
+        action="."
+        method="POST"
+        enctype="multipart/form-data"
+        name="upload_form"
+      >
+        {% csrf_token %}
+        <!-- <label for="exampleFormControlFile1">Input File to Clean</label
+        ><br /><br /> -->
+        <input
+          type="file"
+          name="uploaded"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+        /><br /><br />
+        <button type="submit" class="btn btn-primary">Process Image</button>
+      </form>
+    </div>
+
+    <!-- <script>
+      function util() {
+        document.getElementById("uploaded").reset();
+      }
+    </script> -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
