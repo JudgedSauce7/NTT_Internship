@@ -6,4 +6,4 @@ business process often fail due to noise in images, which leads to poor OCR resu
 Hence a deep learning model is implemented to process the images
 and help in improving the performance of the whole process.<br/>
 This can essentially remove water-marks, background noise, underline noise and skewness in the text.<br/>
-Check it out <a href="http://cleandoc.herokuapp.com/">here</a>!
+Check it out <a href="http://cleandoc.herokuapp.com/" target="_blank">here</a>!
