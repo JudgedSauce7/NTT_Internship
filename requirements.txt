@@ -46,7 +46,7 @@ tensorboard-plugin-wit==1.6.0.post3
 tensorflow==2.5.0
 tensorflow-estimator==2.0.1
 termcolor==1.1.0
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
 whitenoise==5.1.0
 wincertstore==0.2
